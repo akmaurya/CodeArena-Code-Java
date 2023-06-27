@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="52014439150-2vtgfifijg0g97lvr4fmekbb2e4u4r1f.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body bgcolor="#586575" onLoad = onSignIn()>
+  <%@include file="header.jsp" %>
+  <h2 style="height: 50px; color:white";">Welcome to RateX</h2>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        /* document.write("ID: " + profile.getId()); // Don't send this directly to your server! */
+        
+        
+        /* document.write("Full Name: " + profile.getName());
+        document.write("Given Name: " + profile.getGivenName());
+        document.write("Family Name: " + profile.getFamilyName());
+        document.write("Image URL: " + profile.getImageUrl());
+        document.write("Email: " + profile.getEmail());
+        document.write('<h4>Email: </h4>' + profile.getEmail());
+        document.write('<h4>Full Name: ' + profile.getName() + '</h4>');
+        document.write('<h4>Picture: <a href="' + profile.getImageUrl() + '">Image</a></h4>');*/
+        
+        
+        
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        
+        var details = [profile.getEmail(), profile.getName(), profile.getImageUrl()];
+        
+        document.getElementById("email").innerHTML = "<h4>Email : " + details[0] + " </h4>";
+        document.getElementById("name").innerHTML = "<h4>Name : " + details[1] + " </h4>";
+        
+        
+        document.getElementById('imgSrc').src = details[2];
+        document.getElementById('emailText').value = details[0];
+        
+        /* $.ajax({
+        	url: "/userInformation",
+            data: "{" + details + "}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            type: "POST",
+            success: onSuccess,
+            fail: onFail
+        }); */
+      };
+    </script>
+    <div>
+    	<center>
+    		<table style="alignment:center;">
+	    		<tr><a style="color:white" id="email" href = test.html>Email : "details[0]"</a></tr>
+	    		<tr><a style="color:white" id="name" href = test.html>Name : "details[1]"</a></tr>
+	    		<tr><img id="imgSrc" src="" style="background-repeat: no-repeat; background-position: 50%; border-radius: 50%; width: 100px; height: 100px;"><br></tr>
+    		</table>
+    	</center>
+    </div>
+    <a href="#" onclick="signOut();" style="color:red";">Sign out</a>
+    
+	<script>
+	  function signOut() {
+	    var auth2 = gapi.auth2.getAuthInstance();
+	    auth2.signOut().then(function () {
+	      console.log('User signed out.');
+	    });
+	  }
+	  
+	  
+	/*   function putText() {
+	        var simpleText = "hello_world";
+	        var finalSplitText = simpleText.split("_");
+	        var splitText = finalSplitText[0];
+	        document.getElementById("destination").innerHTML = "I need the value of " + splitText + " variable here";
+	    }
+	   */
+	</script>
+	 <!-- <a id="destination" href = test.html>I need the value of "splitText" variable here</a> -->
+	 
+	<form action="/RateX/userInformation" method="post">
+		<input type="text" name="email" id="emailText" value="">
+		<input type="submit" name="submit" id="submit" value="Send">
+	</form>
+	<a method="post" href="testServlet">Now click here</a>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<!-- This is Bean by using setter method of property -->
+	<!-- <bean id="user" class="beans.User">
+		<property name="name" value="Arvind"></property>
+		<property name="age" value="29"></property>
+		<property name="email" value="arvindmaurya1905@gmail.com"></property>
+	</bean> -->
+	<bean id="user" class="beans.User">
+		<constructor-arg value="29" type="int"  index="1"/>
+		<constructor-arg value="arvind" type="java.lang.String"  index="0"/>
+		<constructor-arg value="arvindmaurya1905@gmail.com" type="java.lang.String"  index="2"/>
+		
+	</bean>
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="first" class="com.hftsolution.SpringMvcWithBeansFirst.first" scope="prototype"/> -->
+	<!-- <bean id="z" class="com.hftsolution.SpringMvcWithBeansFirst.first" init-method="starting" destroy-method="ending" scope="singleton"/> -->
+
+
+	<!-- <bean class="com.hftsolution.SpringMvcWithBeansFirst.AutoRun"/> -->
+	<!-- <bean id="c" class="com.hftsolution.SpringMvcWithBeansFirst.BeanPostImplementation"/> -->
+
+
+	<bean id="first" class="com.hftsolution.SpringMvcWithBeansFirst.first">
+		<property name="con" ref="mywork" />
+	</bean>
+
+	<bean id="mywork" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dsa" />
+	</bean>
+	<bean id="dsa" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/loginpath" />
+		<property name="username" value="root" />
+		<property name="password" value="password" />
+	</bean>
+
+
+
+</beans>

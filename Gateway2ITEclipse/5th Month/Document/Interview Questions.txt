@@ -1,0 +1,51 @@
+List down all design patterns which spring is following?
+---------------------------------------------------------------
+1) What is Spring Framework? What are it's main modules?
+2) What are the benefits of using Spring Framework?
+3) What is Inversion of Control (IoC) and Dependency Injection?
+4) Explain IoC in Spring Framework?
+5) Difference between BeanFactory and ApplicationContext? 
+6) In how many ways, you can configure Spring into our application?
+7) What is Spring XML-Based Configuration?
+8) What is Spring Java-Based Configuration?
+9) What is Spring Annotation-based Configuration?
+10) Explain Spring Bean lifecycle?
+11) What are different Spring Bean Scopes?
+12) What are inner beans in Spring?
+13) Are Singleton beans thread safe in Spring Framework?
+14) How can you inject a Java Collection in Spring? Give example?
+15) How to inject a java.util.Properties into a Spring Bean?
+16) Explain Spring Bean Autowiring?
+17) Explain different modes of bean autowiring? 
+18) How do you turn on annotation based autowiring?
+19) Explain @Required annotation with example?
+20) Explain @Autowired annotation with example?
+21) Explain @Qualifier annotation with example?
+22) Difference between constructor injection and setter injection?
+23) What are the different types of events in spring framework?
+24) Difference between FileSystemResource and ClassPathResource?
+25) Name some of the design patterns used in Spring Framework?
+26) Difference between ID & name?
+27) Difference between ref & idref?
+28) What are different types of DI?
+29) What is new in Spring 2.5 as compared to 2.0?
+30) How does a web application use Spring’s configuration xmls?
+31) What are Lazily-instantiated beans?
+32) What is difference between Lazy loading & pre-loading?
+-------------------------------------------------------------------------------------------------------
+1) AOP is different from OOPs & why we need it?
+2) What is cross-cutting concern ?
+3) Explain AOP terminologies like Aspect, Join point, advice, point cuts, etc?
+4) Why we can’t apply advice on any method of Final class?
+5) How Spring AOP works OR What is Proxies Design Pattern?
+6) What is the difference between concern and cross-cutting concern in Spring AOP?
+   Concern is behavior which we want to have in a module of an application. Concern may be defined as a functionality we want to implement to solve a specific business problem. E.g. in any eCommerce application different concerns (or modules) may be inventory management, shipping management, user management etc.
+   Cross-cutting concern is a concern which is applicable throughout the application (or more than one module). e.g. logging , security and data transfer are the concerns which are needed in almost every module of an application, hence they are termed as cross-cutting concerns.
+7) What is Spring AOP Proxy?
+   A proxy is a well-used design pattern. To put it simply, a proxy is an object that looks like another object, but adds special functionality behind the scene.
+   Spring AOP is proxy-based. AOP proxy is an object created by the AOP framework in order to implement the aspect contracts in runtime.
+   Spring AOP defaults to using standard JDK dynamic proxies for AOP proxies. This enables any interface (or set of interfaces) to be proxied. Spring AOP can also use CGLIB proxies. This is necessary to proxy classes, rather than interfaces.
+8) What is Joint point and Point cut?
+9) When to use Spring AOP and when to use full AspectJ?
+   If we only need to advice the execution of operations on Spring beans then we should use Spring AOP. Spring AOP is simpler than AspectJ. Full AspectJ requires the AspectJ complier in the build process. 
+   In case if we advice objects not to be managed by Spring Container, use AspectJ.

@@ -1,0 +1,7 @@
+C:\Program Files\NetBeans 7.1\platform=1382360795781
+D:\Mohitkumar\SampleCRUDApp\build\cluster=1390808857796
+C:\Program Files\NetBeans 7.1\platform=1382360795781
+D:\Mohitkumar\SampleCRUDApp\build\testuserdir=1390808857796
+crc=7
+locale=en_US
+branding=crud_sample_application

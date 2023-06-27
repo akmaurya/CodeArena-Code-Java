@@ -1,0 +1,6 @@
+Hint -> Copy 
+	runRailwayCashClient.class,
+	logo.gif
+	and
+	runClient.bat
+	files in classes folder.

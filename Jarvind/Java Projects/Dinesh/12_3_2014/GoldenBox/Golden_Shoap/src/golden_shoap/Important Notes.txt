@@ -1,0 +1,10 @@
+1)- Don't delete record in ac_master table whose ac_code is less 		than 11 (all thes record is fixed changing make effect on 		coading).
+
+2)- Don't change the ac_group_code of ac_group  tablel. 		(ac_group_code directly used in table like 10,11,12).
+
+3)- Don't change the ac_category_code of ac_category table.
+
+4)-  Don't delete record in ac_smry table whose ac_code is less 		than 11 (ac_code directly used in table to fetch the dr 		and cr of account).
+
+5)- Don't change the column name of polish_material_unit table. 	We can change the value of csale column.
+  	 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="connection" class="com.gps.spring.ioc.pojo.Connection">
+		<property name="url" value="MySQL database URL" />
+		<property name="userName" value="MySQL user" />
+		<property name="password" value="MySQL password" />
+	</bean>
+	
+	<bean id="connection1" class="com.gps.spring.ioc.pojo.Connection">
+		<property name="url" value="MySQL database URL1" />
+		<property name="userName" value="MySQL user2" />
+		<property name="password" value="MySQL password3" />
+	</bean>
+	
+	<bean id="daoManagerFactory" class="com.gps.spring.ioc.dao.DAOManagerFactory" autowire="default"/>
+</beans>

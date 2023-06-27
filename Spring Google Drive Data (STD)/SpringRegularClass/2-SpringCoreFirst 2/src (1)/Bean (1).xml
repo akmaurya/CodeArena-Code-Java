@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd" 
+ xmlns:context="http://www.springframework.org/schema/context" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://www.springframework.org/schema/beans">
+
+
+
+<context:property-placeholder location="Spring.properties" />
+
+<bean id="first" class="com.mainClass.SecondClass">
+<!-- <property name="thirdClass"  ref="objThird"></property> -->
+
+<constructor-arg ref="objThird"></constructor-arg>
+<constructor-arg value="${first}"></constructor-arg>
+</bean>
+<bean id="objThird" class="com.mainClass.ThirdClass"/>
+
+
+</beans>

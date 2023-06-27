@@ -1,0 +1,5 @@
+model/User.class
+controller/LogInController.class
+controller/LogOutController.class
+controller/AddContactController.class
+controller/CreateLoginController.class

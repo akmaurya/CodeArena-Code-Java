@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+	version="2.0">
+	<!-- When user access /hello/ URL path, it will fire the declared web service, 
+		which is HelloWorldImpl.java -->
+	<endpoint name="HelloWorld" implementation="com.gps.jaxws.HelloWorldImpl"
+		url-pattern="/Hellows" />
+	<endpoint name="bookService"
+		implementation="com.gps.jaxws.BookServicePortImpl"
+		url-pattern="/BookWs" />
+</endpoints>

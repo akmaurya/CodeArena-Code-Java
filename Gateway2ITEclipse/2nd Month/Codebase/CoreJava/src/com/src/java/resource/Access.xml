@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<access>
+	<buyer>
+		<page>buyoffer0.xhtml</page>
+		<page>faq0.xhtml</page>
+		<page>index0.jsp</page>
+		<page>login0.xhtml</page>
+		<page>main0.xhtml</page>
+		<page>registrationSucceded0.xhtml</page>
+	</buyer>
+	<seller>
+		<page>sellerpanel.xhtml</page>
+		<page>faq.xhtml</page>
+		<page>index.jsp</page>
+		<page>login.xhtml</page>
+		<page>main.xhtml</page>
+		<page>registrationSucceded.xhtml</page>
+	</seller>
+	<administrator>
+		<page>sellerpanel1.xhtml</page>
+		<page>faq1.xhtml</page>
+		<page>index1.jsp</page>
+		<page>login1.xhtml</page>
+		<page>main1.xhtml</page>
+		<page>registrationSucceded1.xhtml</page>
+	</administrator>
+</access>

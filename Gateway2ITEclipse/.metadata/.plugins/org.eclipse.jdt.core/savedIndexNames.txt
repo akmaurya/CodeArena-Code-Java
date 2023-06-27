@@ -1,0 +1,1 @@
+INDEX VERSION 1.129+I:\AllProjects\Gateway2ITEclipse\.metadata\.plugins\org.eclipse.jdt.core

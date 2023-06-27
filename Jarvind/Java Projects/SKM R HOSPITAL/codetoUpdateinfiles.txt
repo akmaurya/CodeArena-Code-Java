@@ -1,0 +1,23 @@
+	try
+		{
+			ZedInterface inf=null;
+ZedInterfaceForMedical inf1=null;
+try
+{
+	inf=(ZedInterface)Naming.lookup(getIPaddress.IP());
+	inf1=(ZedInterfaceForMedical)Naming.lookup(getIPaddress.IP());
+}
+catch(Exception e)
+{
+	System.out.println("Error with connection with server "+getIPaddress.IP()+" ...");
+	getIPaddress.changeIP();
+	try
+	{
+		inf=(ZedInterface)Naming.lookup(getIPaddress.IP());
+		inf1=(ZedInterfaceForMedical)Naming.lookup(getIPaddress.IP());
+	}
+	catch(Exception ex)
+	{
+		System.out.println("Error with connection with server  rmi://127.0.0.1/ExtendZedServer...");
+	}
+}

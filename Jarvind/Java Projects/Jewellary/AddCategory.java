@@ -1,0 +1,222 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+import javax.swing.table.*;
+
+public class AddCategory extends JFrame implements ActionListener,MouseListener,KeyListener
+{
+	Container con;
+	JInternalFrame frm;
+	JButton addBtn,deleteBtn,exitBtn;
+	JTextField categoryTf;
+	DefaultTableModel dtm;
+	JTable grid;
+		
+	public AddCategory(JDesktopPane desk)
+	{
+		frm=new JInternalFrame("Add New Category",false,true,false,false);
+		con=frm.getContentPane();
+		con.setLayout(null);
+		
+		JLabel lab1=new JLabel("Enter New Category");
+		categoryTf=new JTextField();
+		addBtn=new JButton("Add New");
+		deleteBtn=new JButton("Delete");
+		exitBtn=new JButton("Close");
+		String heading[]={"Category Name"};
+		dtm=new DefaultTableModel(heading,0);
+		grid=new JTable(dtm);
+		JScrollPane jsp=new JScrollPane(grid);
+			
+		lab1.setBounds(10,10,150,25);
+		categoryTf.setBounds(140,10,190,25);
+		addBtn.setBounds(10,60,100,25);	
+		deleteBtn.setBounds(120,60,100,25);
+		exitBtn.setBounds(230,60,100,25);
+		jsp.setBounds(350,10,200,300);
+		
+		categoryTf.setHorizontalAlignment(JTextField.CENTER);
+		addBtn.setMnemonic('a');
+		deleteBtn.setMnemonic('d');
+		exitBtn.setMnemonic('c');
+		
+		con.add(lab1);
+		con.add(categoryTf);
+		con.add(addBtn);
+		con.add(deleteBtn);
+		con.add(exitBtn);
+		con.add(jsp);
+		
+		addBtn.addActionListener(this);
+		deleteBtn.addActionListener(this);
+		exitBtn.addActionListener(this);		
+		grid.addMouseListener(this);
+		
+		addBtn.addKeyListener(this);
+		deleteBtn.addKeyListener(this);
+		exitBtn.addKeyListener(this);		
+		categoryTf.addKeyListener(this);		
+		
+		getCategoryName();
+		
+		desk.add(frm);
+		Dimension ds = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = (ds.width-570)/2;
+		int y = (ds.height-400)/2;
+   		frm.reshape(x,35,570,350);
+   		frm.show();
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource()==addBtn)
+		{
+			saveData();
+		}
+		else if(e.getSource()==deleteBtn)
+		{
+			deleteData();
+		}
+		else if(e.getSource()==exitBtn)
+		{
+			frm.dispose();
+		}
+	}
+	public void keyPressed(KeyEvent e)
+	{
+		if(e.getSource()==addBtn && e.getKeyCode()==10)
+		{
+			saveData();
+		}
+		else if(e.getSource()==deleteBtn && e.getKeyCode()==10)
+		{
+			deleteData();
+		}
+		else if(e.getSource()==exitBtn && e.getKeyCode()==10)
+		{
+			frm.dispose();
+		}
+		else if(e.getSource()==categoryTf && e.getKeyCode()==10)
+		{
+			addBtn.requestFocus();
+		}
+	}
+	public void keyReleased(KeyEvent e){}
+	public void keyTyped(KeyEvent e){}
+	private void saveData()
+	{
+			try
+			{
+				if(categoryTf.getText().trim().length()>0)
+				{
+					Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+    	        	Connection cn=DriverManager.getConnection("jdbc:odbc:jweldsn","zed","zed"); 
+	            	Statement st=cn.createStatement();
+        		    ResultSet rs;
+        		    rs=st.executeQuery("select * from categoryList where categoryName='"+categoryTf.getText().trim()+"'");
+        		    if(rs.next())
+        		    {
+        		    	JOptionPane.showMessageDialog(null,"Oh! This category name already exist in your database.");
+	            		categoryTf.setText("");
+            			categoryTf.requestFocus();
+        		    }
+        		    else			
+            		{
+            			st.executeUpdate("insert into categoryList values('"+categoryTf.getText().trim().toUpperCase()+"')");
+    	        		JOptionPane.showMessageDialog(null,"New category has been added successfully.");
+	            		categoryTf.setText("");
+            			categoryTf.requestFocus();
+            			getCategoryName();
+            		}
+            	cn.close();
+            	}
+            	else
+            	{
+            		JOptionPane.showMessageDialog(null,"Enter category name, please.");
+            		categoryTf.requestFocus();
+            	}
+            }	
+			catch(Exception x)
+			{
+				System.out.println("er01..."+x);
+			}
+	}
+	private void deleteData()
+	{
+		int res=JOptionPane.showConfirmDialog(null,"Are you sure?","Confirm dialog box",JOptionPane.YES_NO_OPTION);
+		if(res==JOptionPane.YES_OPTION)
+		{
+			try
+			{
+				if(categoryTf.getText().trim().length()>0)
+				{
+					Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+    	        	Connection cn=DriverManager.getConnection("jdbc:odbc:jweldsn","zed","zed"); 
+	            	Statement st=cn.createStatement();
+        		    ResultSet rs;
+        		    rs=st.executeQuery("select * from categoryList where categoryName='"+categoryTf.getText().trim()+"'");
+        		    if(rs.next())
+        		    {
+        		    	st.executeUpdate("delete * from categoryList where  categoryName='"+categoryTf.getText().trim()+"'");
+        		    	JOptionPane.showMessageDialog(null,"Category has been deleted successfully.");
+	            		categoryTf.setText("");
+	            		getCategoryName();
+            			categoryTf.requestFocus();
+        		    }
+        		    else			
+            		{
+            			//st.executeUpdate("insert into categoryList values('"+categoryTf.getText().trim().toUpperCase()+"')");
+    	        		JOptionPane.showMessageDialog(null,"Oh! Invalid category name found.");
+	            		categoryTf.setText("");
+            			categoryTf.requestFocus();            			
+            		}
+            		cn.close();
+            	}
+            	else
+            	{
+            		JOptionPane.showMessageDialog(null,"Enter category name, please.");
+            		categoryTf.requestFocus();
+            	}
+            }	
+			catch(Exception x)
+			{
+				System.out.println("er01..."+x);
+			}
+		}	
+	}
+	private void getCategoryName()
+	{
+			try
+			{
+					Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+    	        	Connection cn=DriverManager.getConnection("jdbc:odbc:jweldsn","zed","zed"); 
+	            	Statement st=cn.createStatement();
+        		    ResultSet rs;
+        		    while(grid.getRowCount()>0)	dtm.removeRow(0);
+        		    rs=st.executeQuery("select * from categoryList order by categoryName");
+        		    while(rs.next())
+        		    {
+        		    	String arr[]=new String[1];
+        		    	arr[0]=rs.getString("categoryName");
+        		    	dtm.addRow(arr);
+        		    }
+		           	cn.close();
+            }	
+			catch(Exception x)
+			{
+				System.out.println("er01..."+x);
+			}
+		
+	}
+	
+	public void mousePressed(MouseEvent e){}
+	public void mouseReleased(MouseEvent e){}
+	public void mouseEntered(MouseEvent e){}
+	public void mouseClicked(MouseEvent e)
+	{
+		categoryTf.setText(""+grid.getValueAt(grid.getSelectedRow(),0));
+	}
+	public void mouseExited(MouseEvent e){}
+	
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<context-param>
+		<param-name>AdminUser</param-name>
+		<param-value>Amit</param-value>
+	</context-param>
+	<context-param>
+		<param-name>AdminPassword</param-name>
+		<param-value>Kumar</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4j-config-location</param-name>
+		<param-value>log4j.properties</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>
+			org.apache.tiles.definition.DefinitionsFactory.DEFINITIONS_CONFIG
+		</param-name>
+		<param-value>
+			/WEB-INF/tiles.xml
+		</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>GzipFilter</filter-name>
+		<filter-class>com.gps.filter.GZipServletFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>GzipFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GzipFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GzipFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GzipFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GzipFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- <listener>
+		<listener-class>org.apache.tiles.web.startup.TilesListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
+	</listener> -->
+
+	<servlet>
+		<servlet-name>configImplicit</servlet-name>
+		<jsp-file>/jsp/configImplicit.jsp</jsp-file>
+		<init-param>
+			<param-name>dname</param-name>
+			<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>ScriptletPage</servlet-name>
+		<jsp-file>/jsp/scripletExample.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>ExpressionPage</servlet-name>
+		<jsp-file>/jsp/expressionExample.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>DeclarationPage</servlet-name>
+		<jsp-file>/jsp/methodDeclaration.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>RequestPage</servlet-name>
+		<jsp-file>/jsp/requestProcessor.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>ValidateLogin</servlet-name>
+		<jsp-file>/jsp/LoginValidator.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>ErrorHandler</servlet-name>
+		<jsp-file>/jsp/ErrorHandler.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>IncludePage</servlet-name>
+		<jsp-file>/jsp/include.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>DisplayNumber</servlet-name>
+		<jsp-file>/jsp/DisplayFormattedNumber.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>DisplayData</servlet-name>
+		<jsp-file>/jsp/DisplayData.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>Refresh</servlet-name>
+		<jsp-file>/jsp/AutoRefresh.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>ChangeCase</servlet-name>
+		<jsp-file>/jsp/ChangeCase.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>layout</servlet-name>
+		<jsp-file>/jsp/layout.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>configImplicit</servlet-name>
+		<url-pattern>/configImplicit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ScriptletPage</servlet-name>
+		<url-pattern>/scripletExample</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExpressionPage</servlet-name>
+		<url-pattern>/expressionExample</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RequestPage</servlet-name>
+		<url-pattern>/requestProcessor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeclarationPage</servlet-name>
+		<url-pattern>/methodDeclaration</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ValidateLogin</servlet-name>
+		<url-pattern>/loginValidator</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ErrorHandler</servlet-name>
+		<url-pattern>/ErrorHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IncludePage</servlet-name>
+		<url-pattern>/includePage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayNumber</servlet-name>
+		<url-pattern>/DisplayNumber</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayData</servlet-name>
+		<url-pattern>/DisplayData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Refresh</servlet-name>
+		<url-pattern>/Refresh</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChangeCase</servlet-name>
+		<url-pattern>/ChangeCase</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>layout</servlet-name>
+		<url-pattern>/layout</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>15</session-timeout>
+	</session-config>
+
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/ErrorHandler</location>
+	</error-page>
+	<taglib>
+		<taglib-uri>http://localhost:8080/jsp/tlds/mytags</taglib-uri>
+		<taglib-location>/WEB-INF/tld/numberformatter.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://localhost:8080/jsp/tlds/j</taglib-uri>
+		<taglib-location>/WEB-INF/tld/printRecord.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://localhost:8080/jsp/tlds/ct</taglib-uri>
+		<taglib-location>/WEB-INF/tld/changeCase.tld</taglib-location>
+	</taglib>
+</web-app>

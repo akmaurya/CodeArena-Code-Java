@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id = "triangle" class = "org.koushik.javabrains.Triangle" autowire = "byName"> <!-- autowire = "byType" // autowire = "constructor" -->	
+	</bean>
+	
+	<bean id = "pointA" class = "org.koushik.javabrains.Point" >
+		<property name = "x" value = "0"/>
+		<property name = "y" value = "0"/>
+	</bean>
+	
+	<bean id = "pointB" class = "org.koushik.javabrains.Point" >
+		<property name = "x" value = "-20"/>
+		<property name = "y" value = "0"/>
+	</bean>
+	
+	<bean id = "pointC" class = "org.koushik.javabrains.Point" >
+		<property name = "x" value = "20"/>
+		<property name = "y" value = "0"/>
+	</bean>
+	
+	<!-- <bean id = "center" class = "org.koushik.javabrains.Point" >
+		<property name = "x" value = "20"/>
+		<property name = "y" value = "0"/>
+	</bean>
+	
+	<bean id = "circle" class = "org.koushik.javabrains.Circle"> autowire = "byType" // autowire = "constructor"	
+	</bean> -->
+	
+	<context:component-scan base-package = "org.koushik.javabrains" />
+	
+	
+	
+</beans>
+
+

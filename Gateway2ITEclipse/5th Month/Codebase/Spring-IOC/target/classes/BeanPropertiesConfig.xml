@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="helloWorld1" name="alias1, alias5" class="com.gps.spring.ioc.pojo.HelloWorld">
+		<property name="message" value="Hello World Text Message1 Example" />
+	</bean>
+	<bean id="helloWorld2" name="alias2" class="com.gps.spring.ioc.pojo.HelloWorld">
+		<property name="message" value="Hello World Text Message2 Example" />
+	</bean>
+	<alias name="helloWorld1" alias="alias3" />
+</beans>

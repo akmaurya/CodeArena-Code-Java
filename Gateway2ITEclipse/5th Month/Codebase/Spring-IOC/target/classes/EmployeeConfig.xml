@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="employeeByNameAndEmail" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg value="amit" />
+		<constructor-arg value="amit@gps.com" />
+	</bean>
+
+	<bean id="employeeByIdAndName" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="1" />
+		<constructor-arg value="Amit Kumar" />
+	</bean>
+
+	<bean id="employeeByIdAndAge" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="2" />
+		<constructor-arg type="int" value="35" />
+	</bean>
+
+	<bean id="employeeByIdAndSalary" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="3" />
+		<constructor-arg type="float" value="2333.98" />
+	</bean>
+
+	<bean id="employeeByIndex" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg index="0" value="4" />
+		<constructor-arg index="1" value="4333.98" />
+	</bean>
+
+	<bean id="ghaziabadAddress@gps.com" class="com.gps.spring.ioc.pojo.Address" name="myaddress">
+		<property name="flatNo" value="A2-702, Saviour" />
+		<property name="area" value="Crossing Republik" />
+		<property name="city" value="Ghaziabad" />
+		<property name="country" value="India" />
+	</bean>
+
+	<!-- Inject Address bean by alias name -->
+	<bean id="employeeByIdAndNameWithAddress" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="10" />
+		<constructor-arg value="Amit K" />
+		<property name="address" ref="myaddress" />
+	</bean>
+
+	<!-- Inject Address bean by idRef -->
+	<bean id="employeeByIdAndNameWithAddressByIdref" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="10" />
+		<constructor-arg value="Amit K" />
+		<property name="email">
+			<idref bean="ghaziabadAddress@gps.com" />
+		</property>
+	</bean>
+
+	<!-- Employee bean enclosed Inner bean -->
+	<bean id="employeeByIdAndNameWithInnerAddress" class="com.gps.spring.ioc.pojo.Employee">
+		<constructor-arg type="int" value="20" />
+		<constructor-arg value="Amit Kum" />
+		<property name="address">
+			<bean class="com.gps.spring.ioc.pojo.Address">
+				<property name="flatNo" value="H4 Saviour" />
+				<property name="area" value="Sanjay Nagar" />
+				<property name="city" value="Delhi/NCR" />
+				<property name="country" value="Asia - India" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- Populate employees list -->
+	<bean id="employeeDao" class="com.gps.spring.ioc.dao.EmployeeDAO">
+		<property name="employees">
+			<list>
+				<ref bean = "employeeByIdAndNameWithInnerAddress"/>
+				<ref bean = "employeeByIdAndNameWithAddressByIdref"/>
+				<ref bean = "employeeByIdAndNameWithAddress"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Auto wire byName -->
+</beans>

@@ -1,0 +1,97 @@
+-------------------------------------------------------------------------------
+>Log Session: Monday, January 27, 2014 1:17:46 PM GMT+05:30
+>System Info: 
+  Product Version         = CRUD Customer DB Manager 201112071828
+  Operating System        = Windows XP version 5.1 running on x86
+  Java; VM; Vendor        = 1.7.0_03; Java HotSpot(TM) Server VM 22.1-b02; Oracle Corporation
+  Runtime                 = Java(TM) SE Runtime Environment 1.7.0_03-b05
+  Java Home               = C:\Program Files\Java\jdk1.7.0_03\jre
+  System Locale; Encoding = en_US (crud_sample_application); Cp1252
+  Home Directory          = C:\Documents and Settings\welcome
+  Current Directory       = D:\Mohitkumar\SampleCRUDApp
+  User Directory          = D:\Mohitkumar\SampleCRUDApp\build\testuserdir
+  Cache Directory         = D:\Mohitkumar\SampleCRUDApp\build\testuserdir\var\cache
+  Installation            = D:\Mohitkumar\SampleCRUDApp\build\cluster
+                            C:\Program Files\NetBeans 7.1\platform
+                            C:\Program Files\NetBeans 7.1\platform
+  Boot & Ext. Classpath   = C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext\zipfs.jar
+  Application Classpath   = C:\Program Files\NetBeans 7.1\platform\lib\boot.jar;C:\Program Files\NetBeans 7.1\platform\lib\org-openide-modules.jar;C:\Program Files\NetBeans 7.1\platform\lib\org-openide-util-lookup.jar;C:\Program Files\NetBeans 7.1\platform\lib\org-openide-util.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\boot_ja.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\boot_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\boot_ru.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\boot_zh_CN.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-modules_ja.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-modules_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-modules_ru.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-modules_zh_CN.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util-lookup_ja.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util-lookup_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util-lookup_ru.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util-lookup_zh_CN.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util_ja.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util_ru.jar;C:\Program Files\NetBeans 7.1\platform\lib\locale\org-openide-util_zh_CN.jar;C:\Program Files\Java\jdk1.7.0_03\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_03\lib\tools.jar
+  Startup Classpath       = C:\Program Files\NetBeans 7.1\platform\core\core.jar;C:\Program Files\NetBeans 7.1\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 7.1\platform\core\locale\org-openide-filesystems_zh_CN.jar;D:\Mohitkumar\SampleCRUDApp\build\cluster\core\locale\core_crud_sample_application.jar
+-------------------------------------------------------------------------------
+WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: module org.netbeans.modules.customerdb in D:\Mohitkumar\SampleCRUDApp\build\cluster does not own modules/ext/CustomerDBAccess.jar at org.netbeans.LocaleVariants.findLogicalPath(LocaleVariants.java:270)
+WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: module org.netbeans.modules.customerdb in D:\Mohitkumar\SampleCRUDApp\build\cluster does not own modules/ext/persistence/javax.persistence-2.0.jar at org.netbeans.LocaleVariants.findLogicalPath(LocaleVariants.java:270)
+WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: module org.netbeans.modules.customerdb in D:\Mohitkumar\SampleCRUDApp\build\cluster does not own modules/ext/persistence/eclipselink-2.3.0.jar at org.netbeans.LocaleVariants.findLogicalPath(LocaleVariants.java:270)
+WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: module org.netbeans.modules.derbyclientlibrary in D:\Mohitkumar\SampleCRUDApp\build\cluster does not own modules/ext/derbyclient.jar at org.netbeans.LocaleVariants.findLogicalPath(LocaleVariants.java:270)
+INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
+	org.openide.util.lookup [8.11.1 201112071828]
+	org.openide.util [8.19.1 201112071828]
+	org.openide.modules [7.27.1 201112071828]
+	org.openide.filesystems [7.53.2 201112071828]
+	org.openide.awt [7.39.1 201112071828]
+	org.netbeans.api.progress/1 [1.26.1 201112071828]
+	org.openide.dialogs [7.23.1 201112071828]
+	org.openide.nodes [7.25.1 201112071828]
+	org.openide.windows [6.48.1 201112071828]
+	org.netbeans.modules.editor.mimelookup/1 [1.24.1 201112071828]
+	org.openide.text [6.43.1 201112071828]
+	org.netbeans.swing.tabcontrol [1.29.1 201112071828]
+	org.netbeans.swing.outline [1.17.1 201112071828]
+	org.openide.explorer [6.40.1 201112071828]
+	org.openide.actions [6.24.1 201112071828]
+	org.netbeans.modules.queries/1 [1.25.1 201112071828]
+	org.netbeans.api.annotations.common/1 [1.11.1 201112071828]
+	org.openide.loaders [7.32.1 201112071828]
+	org.openide.io [1.29.1 201112071828]
+	org.openide.execution [1.24.1 201112071828]
+	org.netbeans.swing.plaf [1.23.1 201112071828]
+	org.netbeans.spi.quicksearch [1.12.1 201112071828]
+	org.netbeans.bootstrap/1 [2.44.2 201112071828]
+	org.netbeans.core.startup/1 [1.36.1 201112071828]
+	org.netbeans.modules.settings/1 [1.33.1 201112071828]
+	org.netbeans.modules.progress.ui [1.18.1 201112071828]
+	org.netbeans.modules.print [7.11.1 201112071828]
+	org.netbeans.modules.keyring [1.8.1 201112071828]
+	org.netbeans.core/2 [3.28.1 201112071828]
+	org.netbeans.modules.options.api/1 [1.24.1 201112071828]
+	org.netbeans.modules.options.keymap [1.16.1 201112071828]
+	org.netbeans.libs.jna/1 [1.16.1 201112071828]
+	org.netbeans.modules.masterfs/2 [2.34.1 201112071828]
+	org.netbeans.modules.keyring.impl [1.5.1 201112071828]
+	org.netbeans.modules.editor.mimelookup.impl/1 [1.16.1 201112071828]
+	org.netbeans.modules.derbyclientlibrary [1.1 140127]
+	org.netbeans.modules.customerdb [1.1 140127]
+	org.netbeans.core.windows/2 [2.41.1 201112071828]
+	org.netbeans.modules.customerviewer [1.1 140127]
+	org.netbeans.modules.customereditor [1.1 140127]
+	org.netbeans.libs.osgi [1.7.1 201112071828]
+	org.netbeans.libs.felix [2.1.1 201112071828]
+	org.netbeans.core.ui/1 [1.29.1 201112071828]
+	org.netbeans.core.output2/1 [1.24.1 201112071828]
+	org.netbeans.core.netigso [1.12.1 201112071828]
+	org.netbeans.core.nativeaccess/1 [1.14.1 201112071828]
+	org.netbeans.core.io.ui/1 [1.14.1 201112071828]
+Diagnostic information
+Input arguments:
+	-Dnetbeans.logger.console=true
+	-ea
+	-Djdk.home=C:\Program Files\Java\jdk1.7.0_03
+	-Dnetbeans.home=C:\Program Files\NetBeans 7.1\platform
+	-Dnetbeans.user=D:\Mohitkumar\SampleCRUDApp\build\testuserdir
+	-XX:+HeapDumpOnOutOfMemoryError
+	-XX:HeapDumpPath=D:\Mohitkumar\SampleCRUDApp\build\testuserdir\var\log\heapdump.hprof
+	-Dnetbeans.system_http_proxy=DIRECT
+	-Dsun.awt.keepWorkingSetOnMinimize=true
+	-Dnetbeans.dirs=D:\Mohitkumar\SampleCRUDApp\build\cluster;C:\Program Files\NetBeans 7.1\platform
+Compiler: HotSpot Tiered Compilers
+Heap memory usage: initial ??.?MB maximum ???.?MB
+Non heap memory usage: initial ??.?MB maximum ???.?MB
+Garbage collector: PS Scavenge (Collections=9 Total time spent=?s)
+Garbage collector: PS MarkSweep (Collections=0 Total time spent=?s)
+Classes: loaded=3993 total loaded=3993 unloaded 0
+INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory ?,???,???,???
+INFO [null]: Total physical memory ?,???,???,???
+WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [CustomerAction.shadow, EditorAction.shadow], but some are: [org-netbeans-core-windows-actions-GlobalPropertiesAction.shadow, Output, SwitchToRecentDocumentAction.shadow, ProgressListAction.shadow, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, DocumentsAction.shadow]
+WARNING [org.netbeans.core.TimableEventQueue]: too much time in AWT thread org.netbeans.core.ui.sampler.SelfSamplerAction$InternalSampler@f04dbf
+WARNING [org.netbeans.core.TimableEventQueue]: no snapshot taken
+[EL Info]: 2014-01-27 13:18:23.718--ServerSession(1966663)--EclipseLink, version: Eclipse Persistence Services - 2.3.0.v20110604-r9504
+WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: module org.netbeans.libs.jna in C:\Program Files\NetBeans 7.1\platform does not own modules/lib/x86/jnidispatch.dll at org.netbeans.StandardModule$OneModuleClassLoader.findLibrary(StandardModule.java:721)

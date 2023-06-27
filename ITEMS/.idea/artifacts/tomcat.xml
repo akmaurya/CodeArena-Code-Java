@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="tomcat">
+    <output-path>$PROJECT_DIR$/out/artifacts/tomcat</output-path>
+    <root id="root">
+      <element id="directory" name="lib">
+        <element id="archive" name="ITEMS.jar">
+          <element id="module-output" name="ITEMS" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

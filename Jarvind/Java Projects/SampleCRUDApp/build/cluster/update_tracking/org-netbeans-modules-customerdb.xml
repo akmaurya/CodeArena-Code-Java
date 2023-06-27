@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="org.netbeans.modules.customerdb">
+    <module_version install_time="1390808833031" last="true" origin="installer" specification_version="1.1">
+        <file crc="1392018746" name="config/Modules/org-netbeans-modules-customerdb.xml"/>
+        <file crc="4273359538" name="modules/org-netbeans-modules-customerdb.jar"/>
+    </module_version>
+</module>

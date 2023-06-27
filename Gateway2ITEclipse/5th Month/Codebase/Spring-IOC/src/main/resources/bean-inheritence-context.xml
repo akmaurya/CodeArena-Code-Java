@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- template bean -->
+	<bean id="BaseCustomerMalaysia" class="com.gps.spring.ioc.pojo.Customer"
+		abstract="true">
+		<property name="country" value="Malaysia" />
+		<property name="preferredLocation">
+			<list>
+				<value>A</value>
+				<value>B</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="CustomerBeanAddList" parent="BaseCustomerMalaysia">
+		<property name="action" value="buy" />
+		<property name="type" value="1" />
+		<property name="preferredLocation">
+			<list merge="true">
+				<value>C</value>
+				<value>D</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="CustomerBeanOverrideList" parent="BaseCustomerMalaysia">
+		<property name="action" value="sell" />
+		<property name="type" value="2" />
+		<property name="country" value="India" />
+		<property name="preferredLocation">
+			<list>
+				<value>Delhi</value>
+				<value>Ghaziabad</value>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+<Configuration package="src.com.gps" status="WARN">
+	<Appenders>
+		<File name="FILE" fileName="output.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - 
+	%msg%n" />
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger name="log4j.test.Log4jTest" level="trace">
+			<AppenderRef ref="FILE" />
+		</Logger>
+		<Root level="trace">
+			<AppenderRef ref="FILE" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:annotation-config />
+
+	<bean id="myaddress" class="com.gps.spring.ioc.annotation.pojo.Address">
+		<property name="flatNo" value="A2-702, Saviour" />
+		<property name="area" value="Crossing Republik" />
+		<property name="city" value="Ghaziabad" />
+		<property name="country" value="India" />
+	</bean>
+	
+	<bean id="gpsaddress" class="com.gps.spring.ioc.annotation.pojo.Address">
+		<property name="flatNo" value="A2-1102, Saviour" />
+		<property name="area" value="Sanjay Nagar" />
+		<property name="city" value="Ghaziabad" />
+		<property name="country" value="India" />
+	</bean>
+	
+	<bean id="gpsaddressForResouce" class="com.gps.spring.ioc.annotation.pojo.Address">
+		<property name="flatNo" value="A2-02, Saviour" />
+		<property name="area" value="H-Sanjay Nagar" />
+		<property name="city" value="Ghaziabad" />
+		<property name="country" value="India" />
+	</bean>
+
+	<bean id="employeeByIdAndNameWithAddress" class="com.gps.spring.ioc.annotation.pojo.Employee">
+		<property name="id" value="11" />
+		<property name="name" value="AmitK" />
+	</bean>	
+	
+	<bean id="gpsEmployeeByAddress" class="com.gps.spring.ioc.annotation.pojo.GPSEmployee">
+		<property name="id" value="12" />
+		<property name="name" value="AmitK GPS" />
+	</bean>
+	
+	<!-- Inject Address bean by alias name -->
+	<bean id="gpsResourceEmployeeByAddress" class="com.gps.spring.ioc.annotation.pojo.GPSResourceEmployee">
+		<property name="id" value="12" />
+		<property name="name" value="AmitK GPS" />
+	</bean>	
+</beans>

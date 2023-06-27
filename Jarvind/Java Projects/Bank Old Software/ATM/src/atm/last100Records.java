@@ -1,0 +1,407 @@
+package atm;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * last100Records.java
+ *
+ * Created on Oct 15, 2013, 4:53:26 PM
+ */
+
+/**
+ *
+ * @author welcome
+ */
+public class last100Records extends javax.swing.JInternalFrame {
+javax.swing.table.DefaultTableModel dtm1,dtm2,dtm3;
+    /** Creates new form last100Records */
+    public last100Records() {
+        initComponents();
+        jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
+        javax.swing.table.DefaultTableCellRenderer CRLeft=new javax.swing.table.DefaultTableCellRenderer();
+        javax.swing.table.DefaultTableCellRenderer CRRight=new javax.swing.table.DefaultTableCellRenderer();
+        javax.swing.table.DefaultTableCellRenderer CRCenter=new javax.swing.table.DefaultTableCellRenderer();
+
+        CRLeft.setHorizontalAlignment(javax.swing.JLabel.LEFT);
+        CRRight.setHorizontalAlignment(javax.swing.JLabel.RIGHT);
+        CRCenter.setHorizontalAlignment(javax.swing.JLabel.CENTER);
+
+        String heading[]={"Sr. No","Date","Particular","Withdrawals","Deposits","Total Amount"};
+        dtm1=new javax.swing.table.DefaultTableModel(heading,0);
+
+        jTable1.setModel(dtm1);
+        jTable1.setRowHeight(25);
+        javax.swing.table.TableColumn column;
+
+//jTable1.getTableHeader().setFont(new Font("Vardana", Font.BOLD, 12));
+        column=jTable1.getColumn("Sr. No");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(60);
+        column=jTable1.getColumn("Date");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(100);
+        column=jTable1.getColumn("Particular");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(376);
+        column=jTable1.getColumn("Withdrawals");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(130);
+        column=jTable1.getColumn("Deposits");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(130);
+        column=jTable1.getColumn("Total Amount");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+
+
+
+
+
+
+
+        jTable2.setAutoResizeMode(jTable2.AUTO_RESIZE_OFF);
+
+        CRLeft.setHorizontalAlignment(javax.swing.JLabel.LEFT);
+        CRRight.setHorizontalAlignment(javax.swing.JLabel.RIGHT);
+        CRCenter.setHorizontalAlignment(javax.swing.JLabel.CENTER);
+
+        String heading1[]={"Sr. No","Date","Particular","Withdrawals","Deposits","Total Amount"};
+        dtm2=new javax.swing.table.DefaultTableModel(heading1,0);
+
+        jTable2.setModel(dtm2);
+        jTable2.setRowHeight(25);
+
+//jTable1.getTableHeader().setFont(new Font("Vardana", Font.BOLD, 12));
+        column=jTable2.getColumn("Sr. No");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(60);
+        column=jTable2.getColumn("Date");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(100);
+        column=jTable2.getColumn("Particular");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(376);
+        column=jTable2.getColumn("Withdrawals");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+        column=jTable2.getColumn("Deposits");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+        column=jTable2.getColumn("Total Amount");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+
+
+
+
+
+        jTable3.setAutoResizeMode(jTable3.AUTO_RESIZE_OFF);
+
+        CRLeft.setHorizontalAlignment(javax.swing.JLabel.LEFT);
+        CRRight.setHorizontalAlignment(javax.swing.JLabel.RIGHT);
+        CRCenter.setHorizontalAlignment(javax.swing.JLabel.CENTER);
+
+        String heading2[]={"Sr. No","Date","Particular","Withdrawals","Deposits","Total Amount"};
+        dtm3=new javax.swing.table.DefaultTableModel(heading,0);
+
+        jTable3.setModel(dtm3);
+        jTable3.setRowHeight(25);
+
+//jTable1.getTableHeader().setFont(new Font("Vardana", Font.BOLD, 12));
+        column=jTable3.getColumn("Sr. No");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(60);
+        column=jTable3.getColumn("Date");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(100);
+        column=jTable3.getColumn("Particular");
+        column.setCellRenderer(CRCenter);
+        column.setPreferredWidth(376);
+        column=jTable3.getColumn("Withdrawals");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+        column=jTable3.getColumn("Deposits");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+        column=jTable3.getColumn("Total Amount");
+        column.setCellRenderer(CRRight);
+        column.setPreferredWidth(140);
+        table();
+    }
+
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setIconifiable(true);
+        setTitle("Last 100 Records In KGSG UBI and UBI Acount Statement (CD)");
+
+        jPanel1.setBackground(new java.awt.Color(250, 245, 216));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setLayout(null);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 252));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.setRowHeight(18);
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(10, 20, 990, 200);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 252));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        jTable2.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable2.setRowHeight(18);
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel3.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(10, 240, 990, 200);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 252));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jTable3.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable3.setRowHeight(18);
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel4.add(jScrollPane3, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(10, 460, 990, 200);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel1.setText("KGSG ");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 0, 150, 20);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel2.setText("UBI");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 220, 100, 20);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel3.setText("UBI A/C statement (CD)");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 440, 160, 20);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    // End of variables declaration//GEN-END:variables
+
+class task1 extends Thread
+{
+    public void run()
+    {
+        String qry="";
+        try
+        {
+            interfaceATM object1=null;
+            try
+            {
+		object1=(interfaceATM)java.rmi.Naming.lookup(getIPaddress.IP());
+            }
+            catch(Exception e)
+            {
+		System.out.println("Error at the time of connection with server "+getIPaddress.IP()+"..."+e);
+                getIPaddress.changeIP();
+		try
+		{
+			object1=(interfaceATM)java.rmi.Naming.lookup(getIPaddress.IP());
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error at the time of connection with server ip-rmi//127.0.0.1/railwayMethods  ..."+ex);
+		}
+            }
+            //double total=0.0;
+            java.math.BigDecimal bd=null;
+
+
+            qry="Select tran_date,particular,tran_debit_amt,tran_credit_amt,balance_amt from kgsg_n_ubi order by entry_no desc";
+            System.out.println(qry);
+            String load[][]=object1.getInformationDD(qry,5);
+            System.out.println(load.length);
+            String arr[]=null;
+            //int total=0;
+            int c=0;
+            dtm1.setRowCount(0);
+            if(load.length>0)
+            {
+                System.out.println("hello111111111111111111111111111");
+                arr=new String[6];
+                for(int i=0;i<load.length;i++)
+                {
+
+                    arr[0]=""+(dtm1.getRowCount()+1);
+                    arr[2]=load[i][1];
+                    String dt[]=load[i][0].split("-");
+                    arr[1]=dt[2]+"-"+dt[1]+"-"+dt[0];
+                    arr[3]=load[i][2];
+                    arr[4]=load[i][3];
+                    arr[5]=load[i][4];
+                    dtm1.addRow(arr);
+                    c++;
+                    if(c==100)
+                        break;
+                }
+
+            }
+
+
+            qry="Select tran_date,particular,tran_debit_amt,tran_credit_amt,balanceamt from ubi_bill_of_kgsg_cards order by entry_no desc";
+            System.out.println(qry);
+            load=object1.getInformationDD(qry,5);
+            System.out.println(load.length);
+            arr=null;
+            c=0;
+            dtm2.setRowCount(0);
+            if(load.length>0)
+            {
+                System.out.println("hello111111111111111111111111111");
+                arr=new String[6];
+                for(int i=0;i<load.length;i++)
+                {
+
+                    arr[0]=""+(dtm2.getRowCount()+1);
+                    arr[2]=load[i][1];
+                    String dt[]=load[i][0].split("-");
+                    arr[1]=dt[2]+"-"+dt[1]+"-"+dt[0];
+                    arr[3]=load[i][2];
+                    arr[4]=load[i][3];
+                    arr[5]=load[i][4];
+                    dtm2.addRow(arr);
+                    c++;
+                    if(c==100)
+                        break;
+                }
+
+            }
+
+            qry="Select date,particulars,withdrawal,Deposit,balance from ubi_account_statement order by entry_no desc";
+            System.out.println(qry);
+            load=object1.getInformationDD(qry,5);
+            System.out.println(load.length);
+            arr=null;
+            c=0;
+            dtm3.setRowCount(0);
+            if(load.length>0)
+            {
+                System.out.println("hello111111111111111111111111111");
+                arr=new String[6];
+                for(int i=0;i<load.length;i++)
+                {
+
+                    arr[0]=""+(dtm3.getRowCount()+1);
+                    arr[2]=load[i][1];
+                    String dt[]=load[i][0].split("-");
+                    arr[1]=dt[2]+"-"+dt[1]+"-"+dt[0];
+                    arr[3]=load[i][2];
+                    arr[4]=load[i][3];
+                    arr[5]=load[i][4];
+                    dtm3.addRow(arr);
+                    c++;
+                    if(c==100)
+                        break;
+                }
+
+            }
+        }
+        catch(Exception ae)
+        {
+            System.out.println("Eror in Save Information111....."+ae);
+        }
+    }
+}
+private void table()
+{
+    task1 t1=new task1();
+    t1.start();
+}
+
+
+
+}

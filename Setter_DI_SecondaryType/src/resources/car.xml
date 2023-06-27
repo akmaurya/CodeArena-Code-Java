@@ -1,0 +1,18 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="car" class="beans.Car">
+		<property name="carName" value="Audi"></property>
+		<!-- Engine property by reference -->
+		<!-- <property name="engine" ref="engine"></property> -->
+		
+		<!-- Engine property by innerBean -->
+		<property name="engine" >
+			<bean class="beans.Engine">
+				<property name="modelYear" value="2018"></property>
+			</bean>		
+		</property>
+		
+	</bean>
+</beans>

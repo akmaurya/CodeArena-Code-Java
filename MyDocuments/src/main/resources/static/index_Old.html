@@ -1,0 +1,273 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Collection Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+ 
+
+.tree {
+      font-family: Arial, sans-serif;
+    }
+
+    .tree ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+
+    .tree ul.visible {
+      display: block;
+    }
+
+    .tree li {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .tree li:before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: -10px;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      width: 10px;
+      height: 20px;
+    }
+
+    .tree li:last-child:before {
+      height: 10px;
+      bottom: auto;
+    }
+
+    .tree li:after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -14px;
+      border-left: 1px solid #ccc;
+      width: 10px;
+      height: 100%;
+    }
+
+    .tree li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      display: inline-block;
+    }
+
+    .tree li a:hover {
+      background-color: #eaeaea;
+    }
+  </style>
+  <script>
+    /*  function submitForm() {
+      var form = document.getElementById('document-form');
+      var formData = new FormData(form);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'submit-form.php', true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Handle the server response here (if needed)
+          console.log(xhr.responseText);
+        }
+      };
+
+      xhr.send(formData);
+    }
+
+    var submitButton = document.getElementById('submit-button');
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      submitForm();
+    });
+ */
+
+    function renderTree(node, parentElement) {
+	 //alert(node+"-----------"+ parentElement.name);
+        var ul = document.createElement('ul');
+
+        for (var key in node) {
+          if (node.hasOwnProperty(key)) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+
+            a.textContent = key;
+            li.appendChild(a);
+
+            if (typeof node[key] === 'object') {
+              renderTree(node[key], li);
+              a.addEventListener('click', function(event) {
+                event.preventDefault();
+                toggleVisibility(this.nextSibling);
+              });
+            }
+
+            ul.appendChild(li);
+          }
+        }
+
+        parentElement.appendChild(ul);
+      }
+
+      function toggleVisibility(element) {
+        if (element.style.display === 'block') {
+          element.style.display = 'none';
+        } else {
+          element.style.display = 'block';
+        }
+      }
+
+       /* var json = {
+        "root": {
+          "folder1": {
+            "file1": {},
+            "file2": {}
+          },
+          "folder2": {
+            "subfolder1": {
+              "file3": {},
+              "file4": {}
+            },
+            "subfolder2": {}
+          }
+        }
+      };
+
+      var treeView = document.getElementById('tree-view');
+      renderTree(json, treeView);  */ 
+      
+      function test(){
+    	  //alert("This is a test alert");
+    	  var submitButton = document.getElementById('submit-button');
+    	 // alert("This is a test alert-2");
+    	 // alert(submitButton);
+    	  
+    	  var json = {
+    		        "root": {
+    		          "folder1": {
+    		            "file1": {},
+    		            "file2": {}
+    		          },
+    		          "folder2": {
+    		            "subfolder1": {
+    		              "file3": {},
+    		              "file4": {}
+    		            },
+    		            "subfolder2": {}
+    		          }
+    		        }
+    		      };
+
+    		      var treeView = document.getElementById('tree-view');
+    		      renderTree(json, treeView);  
+      }
+      
+      test();
+    </script>
+</head>
+<body>
+<p>
+<a href="product">Get all Products</a>
+</p>
+<p>
+<a href="documents" onclick = "test()">Get Documents</a>
+</p>
+
+
+<div class="tree" id="tree-view"></div>
+
+  <div class="container">
+    <h2>Document Collection Form</h2>
+    <form action="submitForm()" method="POST" enctype="multipart/form-data" id='document-form'>
+      <div class="form-group">
+        <label for="person-name">Person Name:</label>
+        <input type="text" id="person-name" name="person-name" required>
+      </div>
+      <div class="form-group">
+        <label for="document-name">Document Name:</label>
+        <input type="text" id="document-name" name="document-name" required>
+      </div>
+      <div class="form-group">
+        <label for="document-details">Document Details:</label>
+        <textarea id="document-details" name="document-details" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="document-image">Document Image:</label>
+        <input type="file" id="document-image" name="document-image" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="creation-date">Creation Date:</label>
+        <input type="date" id="creation-date" name="creation-date" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Submit" id='submit-button'>
+      </div>
+    </form>
+  </div>
+</body>
+</html> -->

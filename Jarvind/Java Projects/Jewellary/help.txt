@@ -1,0 +1,3 @@
+DSN -> jweldsn
+
+database name -> ...\jwellary\database.mdb

@@ -1,0 +1,52 @@
+body {
+  /*display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;*/
+}
+.container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 50%;
+}
+.cn {
+  display: table-cell;
+  /*width: 100%;*/
+  width: 100vw;
+  height: 50px;
+  vertical-align: middle;
+  background-color:#ED6B49;
+}
+.container.c1 {
+  float: right;
+  /* text-align is inherited, it can be put on the parent or the target element */
+  
+  display: table-cell;
+  width: 200px;
+  height: 50px;
+  vertical-align: middle;
+  background-color:#ED6B49;
+}
+.container.c2 {
+ /* without text-align: center; */
+}
+.button {
+  padding: 5px 10px;
+  font-size: 12px;
+  text-decoration: none;
+  color: hsla(0, 0%, 90%, 1);
+  background: linear-gradient(hsla(21, 85%, 51%, 1), hsla(120,100%,50%,0.3));
+  border-radius: 10px;
+  /*box-shadow: 2px 2px 15px -5px hsla(0, 0%, 0%, 1);*/
+}
+.button:hover {
+  background: linear-gradient(hsl(207.5, 84.8%, 51%), hsla(207, 84%, 62%, 1));
+  transition: all 0.2s linear;
+}
+.button.b1 {
+    display: inline-flex; /* element only as wide as content */
+}
+.button.b2 {
+    display: table; /* element only as wide as content */
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
+	default-init-method="defaultInit" default-destroy-method="defaultDestroy">
+
+	<bean id="mylifeCycleBean" class="com.gps.spring.ioc.pojo.LifeCycleBean"
+		init-method="initMethod" destroy-method="destroyMethod">
+		<property name="valueX" value="X-axis val:500" />
+		<property name="valueY" value="Y-axis value-200" />
+	</bean>
+
+	<!-- <bean id="mylifeCycleBean" class="com.gps.spring.ioc.pojo.LifeCycleBean"> 
+		<property name="valueX" value="${valueX}" /> <property name="valueY" value="${valueY}" 
+		/> </bean> -->
+
+
+	<!-- <bean class="com.gps.spring.ioc.pojo.MyBeanFactoryPostProcessor" /> -->
+	<!-- externalize bean properties via property file -->
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="locations" value="classpath:lifeCycleBean.properties" /> 
+		</bean> -->
+
+	<!-- <bean class="com.gps.spring.ioc.pojo.MyBeanInitProcessor" /> -->
+</beans> 
