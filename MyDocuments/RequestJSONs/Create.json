@@ -1,0 +1,56 @@
+{
+      "name": "Rajat Maurya",
+      "dob": "1989-06-19",
+      "gender": "Male",
+      "contactNo": "9918508601",
+      "documents": [
+        {
+          "documentName": "Aadhar",
+          "informations": [
+            {
+              "infoName": "Aadhar Number",
+              "infoData": "123456789012"
+            },
+            {
+              "infoName": "DOB",
+              "infoData": "1989-06-19"
+            },
+            {
+              "infoName": "Address",
+              "infoData": "Kakarmatta Varanasi"
+            }
+          ]
+        },
+        {
+          "documentName": "High School",
+          "informations": [
+            {
+              "infoName": "Roll Number",
+              "infoData": "123344"
+            },
+			{
+              "infoName": "DOB",
+              "infoData": "1989-06-19"
+            },
+            {
+              "infoName": "Marks",
+              "infoData": "Subject wise",
+              "subInfo": [
+                {
+                    "subInfoName": "Hindi",
+                    "subInfoData": "87"
+                },
+                {
+                    "subInfoName": "English",
+                    "subInfoData": "67"
+                },
+	    		{
+                    "subInfoName": "Math",
+                    "subInfoData": "87"
+                }
+			  ]
+			}
+          ] 
+        }         
+      ]
+}

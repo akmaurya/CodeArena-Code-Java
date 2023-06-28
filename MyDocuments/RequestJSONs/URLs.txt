@@ -1,0 +1,25 @@
+Get all persons
+(GET)http://localhost:8080/persons
+
+
+
+Get person of name
+(GET)http://localhost:8080/persons/Khushboo Maurya
+
+
+
+Delete a person of name
+(DELETE)http://localhost:8080/persons/Khushboo Maurya
+
+
+
+
+Create a person
+(POST)http://localhost:8080/persons
+e.g. Create.json
+
+
+
+Update a person
+(PUT)http://localhost:8080/persons/Khushboo Maurya
+e.g. Update.json
