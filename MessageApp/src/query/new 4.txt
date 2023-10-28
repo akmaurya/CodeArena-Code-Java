@@ -1,0 +1,11 @@
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) values ('1', 'Vendor A', '10'),  ('2', 'Vendor B', '8'),  ('3', 'Vendor C', '12')
+INSERT INTO MESSAGE_TO_SEND (SNO, NAME, MESSAGE, VENDOR_NAME) values ('1', 'John', 'Hello from John', 'Vendor A'),  ('2', 'Jane', 'Hi there!', 'Vendor B'),  ('3', 'Michael', 'Greetings', 'Vendor A')
+INSERT INTO MESSAGE_SENT (SNO, NAME, MESSAGE, VENDOR_NAME, MESSAGE_SENT) values ('1', 'John', 'Hello from John', 'Vendor A', 'true'),  ('2', 'Jane', 'Hi there!', 'Vendor B', 'true'),  ('3', 'Michael', 'Greetings', 'Vendor A', 'false')
+
+
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) 
+values ('1', 'Vendor A', '10'),  ('2', 'Vendor B', '8'),  ('3', 'Vendor C', '12')
+INSERT INTO MESSAGE_TO_SEND (SNO, NAME, MESSAGE, VENDOR_NAME) 
+values ('1', 'John', 'Hello from John', 'Vendor A'),  ('2', 'Jane', 'Hi there!', 'Vendor B'),  ('3', 'Michael', 'Greetings', 'Vendor A')
+INSERT INTO MESSAGE_SENT (SNO, NAME, MESSAGE, VENDOR_NAME, MESSAGE_SENT) 
+values ('1', 'John', 'Hello from John', 'Vendor A', true),  ('2', 'Jane', 'Hi there!', 'Vendor B', true),  ('3', 'Michael', 'Greetings', 'Vendor A', false)

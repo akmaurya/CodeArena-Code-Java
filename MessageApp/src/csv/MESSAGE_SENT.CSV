@@ -1,0 +1,4 @@
+SNO,NAME,MESSAGE,VENDOR_NAME,MESSAGE_SENT
+1,John,Hello from John,Vendor A,true
+2,Jane,Hi there!,Vendor B,true
+3,Michael,Greetings,Vendor A,false

@@ -1,0 +1,70 @@
+create database threads;
+use threads;
+-- Create VENDOR Table
+CREATE TABLE VENDOR (
+    SNO INT PRIMARY KEY,
+    VENDOR_NAME VARCHAR(50),
+    TRANSACTION_PER_SECOND INT
+);
+
+-- Create MESSAGE_TO_SEND Table
+CREATE TABLE MESSAGE_TO_SEND (
+    SNO INT PRIMARY KEY,
+    NAME VARCHAR(50),
+    MESSAGE VARCHAR(500),
+    VENDOR_NAME VARCHAR(50)
+);
+
+-- Create MESSAGE_SENT Table
+CREATE TABLE MESSAGE_SENT (
+    SNO INT PRIMARY KEY,
+    NAME VARCHAR(50),
+    MESSAGE VARCHAR(500),
+    VENDOR_NAME VARCHAR(50),
+    MESSAGE_SENT BOOLEAN
+);
+
+
+show tables;
+
+
+DESC VENDOR;
+DESC MESSAGE_TO_SEND;
+DESC MESSAGE_SENT;
+-- Select All from VENDOR Table
+SELECT * FROM VENDOR;
+
+-- Select All from MESSAGE_TO_SEND Table
+SELECT * FROM MESSAGE_TO_SEND;
+
+-- Select All from MESSAGE_SENT Table
+SELECT * FROM MESSAGE_SENT;
+
+truncate table VENDOR;
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) 
+values ('1', 'Vendor A', '10');
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) values ('1', 'Vendor A', '10'),  ('2', 'Vendor B', '8'),  ('3', 'Vendor C', '12');
+
+
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) values ('1', 'Vendor A', '10'),  ('2', 'Vendor B', '8'),  ('3', 'Vendor C', '12');
+INSERT INTO MESSAGE_TO_SEND (SNO, NAME, MESSAGE, VENDOR_NAME) values ('1', 'John', 'Hello from John', 'Vendor A'),  ('2', 'Jane', 'Hi there!', 'Vendor B'),  ('3', 'Michael', 'Greetings', 'Vendor A');
+INSERT INTO MESSAGE_SENT (SNO, NAME, MESSAGE, VENDOR_NAME, MESSAGE_SENT) values ('1', 'John', 'Hello from John', 'Vendor A', 'true'),  ('2', 'Jane', 'Hi there!', 'Vendor B', 'true'),  ('3', 'Michael', 'Greetings', 'Vendor A', 'false');
+
+
+-- Truncate VENDOR Table
+TRUNCATE TABLE VENDOR;
+
+-- Truncate MESSAGE_TO_SEND Table
+TRUNCATE TABLE MESSAGE_TO_SEND;
+
+-- Truncate MESSAGE_SENT Table
+TRUNCATE TABLE MESSAGE_SENT;
+
+
+
+INSERT INTO VENDOR (SNO, VENDOR_NAME, TRANSACTION_PER_SECOND) 
+values ('1', 'Vendor A', '10'),  ('2', 'Vendor B', '8'),  ('3', 'Vendor C', '12');
+INSERT INTO MESSAGE_TO_SEND (SNO, NAME, MESSAGE, VENDOR_NAME) 
+values ('1', 'John', 'Hello from John', 'Vendor A'),  ('2', 'Jane', 'Hi there!', 'Vendor B'),  ('3', 'Michael', 'Greetings', 'Vendor A');
+INSERT INTO MESSAGE_SENT (SNO, NAME, MESSAGE, VENDOR_NAME, MESSAGE_SENT) 
+values ('1', 'John', 'Hello from John', 'Vendor A', true),  ('2', 'Jane', 'Hi there!', 'Vendor B', true),  ('3', 'Michael', 'Greetings', 'Vendor A', false);
