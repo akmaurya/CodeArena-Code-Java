@@ -1,0 +1,8 @@
+Create Repository using browser
+
+git init
+git branch -m main
+git remote add origin git@github.com:akmaurya/CodeArena-Code-JavaScript.git
+git add .
+git commit -m "Initial Commit"
+git push origin main
