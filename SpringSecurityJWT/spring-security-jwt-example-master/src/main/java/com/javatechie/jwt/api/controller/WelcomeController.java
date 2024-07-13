@@ -18,6 +18,7 @@ public class WelcomeController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    
     @GetMapping("/")
     public String welcome() {
         return "Welcome to javatechie !!";
