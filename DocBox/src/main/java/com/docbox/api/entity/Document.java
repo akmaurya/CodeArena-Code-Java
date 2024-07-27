@@ -12,6 +12,7 @@ import javax.persistence.Convert;
 import javax.persistence.Converter;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,7 +39,8 @@ public class Document {
     @Column(columnDefinition = "TEXT") 
     private Map<String, Object> fields = new HashMap<>();// JSON or key-value pairs for dynamic fields
 
-    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<DocumentImage> images;
     

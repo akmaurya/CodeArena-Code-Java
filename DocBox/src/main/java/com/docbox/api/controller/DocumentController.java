@@ -2,13 +2,19 @@ package com.docbox.api.controller;
 
 import com.docbox.api.customexception.ResourceNotFoundException;
 import com.docbox.api.entity.Document;
+import com.docbox.api.entity.DocumentImage;
 import com.docbox.api.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/documents")
@@ -28,16 +34,45 @@ public class DocumentController {
 	
 	@Autowired
     private DocumentService documentService;
+	
+	@Autowired
+    private ObjectMapper objectMapper;
+
+//    @PostMapping
+//    public ResponseEntity<Document> addDocument(@RequestBody Document document) {
+//        Document savedDocument = documentService.saveDocument(document);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(savedDocument);
+//    }
 
     @PostMapping
-    public ResponseEntity<Document> addDocument(@RequestBody Document document) {
-        Document savedDocument = documentService.saveDocument(document);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedDocument);
+    public ResponseEntity<Document> addDocument(@RequestParam("documentType") String documentType,
+            @RequestParam("userId") Long userId,
+            @RequestParam("fields") String fieldsJson,
+            @RequestParam(value = "images[]", required = false) List<String> imageUrls,
+            @RequestParam("files") List<MultipartFile> files) throws IOException {
+//    	Document savedDocument = documentService.saveDocument(document);
+    	Map<String, Object> fields = objectMapper.readValue(fieldsJson, Map.class);
+    	System.out.println(files);
+    	return ResponseEntity.status(HttpStatus.CREATED).body(documentService.saveDocument(documentType, userId, fields, imageUrls, files));
     }
     
-    @PutMapping("/{id}")
-    public ResponseEntity<Document> updateDocument(@PathVariable Long id, @RequestBody Document document) {
-        Document updatedDocument = documentService.updateDocument(id, document);
+    @PostMapping("/upload")
+    public String uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
+        DocumentImage image = new DocumentImage();
+        image.setName(file.getOriginalFilename());
+//        image.setData(file.getBytes());
+//        documentService.saveDocument(image);
+        return "Image uploaded successfully: " + file.getOriginalFilename();
+    }
+    
+    @PutMapping("/{docId}")
+    public ResponseEntity<Document> updateDocument(@PathVariable Long docId, @RequestParam("documentType") String documentType,
+            @RequestParam("userId") Long userId,
+            @RequestParam("fields") String fieldsJson,
+            @RequestParam("ids") String oldImageIds,
+            @RequestParam("files") List<MultipartFile> files) throws IOException {
+    	Map<String, Object> fields = objectMapper.readValue(fieldsJson, Map.class);
+        Document updatedDocument = documentService.updateDocument(docId, documentType, userId, fields, files, oldImageIds);
         return ResponseEntity.ok(updatedDocument);
     }
     

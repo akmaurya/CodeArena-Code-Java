@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -15,10 +17,16 @@ public class DocumentImage {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "document_id")
     @JsonBackReference
     private Document document;
 
     private String imageUrl;
+    
+    private String name;
+    
+    @Lob
+    private byte[] data;
 
     // Getters and setters
 
@@ -45,4 +53,24 @@ public class DocumentImage {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public byte[] getData() {
+		return data;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	
+    
+    
 }
