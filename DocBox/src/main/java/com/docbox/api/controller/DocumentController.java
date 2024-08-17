@@ -3,6 +3,7 @@ package com.docbox.api.controller;
 import com.docbox.api.customexception.ResourceNotFoundException;
 import com.docbox.api.entity.Document;
 import com.docbox.api.entity.DocumentImage;
+import com.docbox.api.service.DocumentImageService;
 import com.docbox.api.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,9 @@ public class DocumentController {
     private DocumentService documentService;
 	
 	@Autowired
+	private DocumentImageService documentImageService;
+	
+	@Autowired
     private ObjectMapper objectMapper;
 
 //    @PostMapping
@@ -54,15 +58,6 @@ public class DocumentController {
     	Map<String, Object> fields = objectMapper.readValue(fieldsJson, Map.class);
     	System.out.println(files);
     	return ResponseEntity.status(HttpStatus.CREATED).body(documentService.saveDocument(documentType, userId, fields, imageUrls, files));
-    }
-    
-    @PostMapping("/upload")
-    public String uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
-        DocumentImage image = new DocumentImage();
-        image.setName(file.getOriginalFilename());
-//        image.setData(file.getBytes());
-//        documentService.saveDocument(image);
-        return "Image uploaded successfully: " + file.getOriginalFilename();
     }
     
     @PutMapping("/{docId}")

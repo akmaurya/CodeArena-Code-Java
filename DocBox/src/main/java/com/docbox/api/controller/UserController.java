@@ -3,10 +3,14 @@ package com.docbox.api.controller;
 import com.docbox.api.customexception.ResourceNotFoundException;
 import com.docbox.api.dto.AuthenticationResponse;
 import com.docbox.api.dto.UserDTO;
+import com.docbox.api.entity.Document;
+import com.docbox.api.entity.DocumentImage;
 import com.docbox.api.entity.User;
 import com.docbox.api.service.CustomUserDetailsService;
 import com.docbox.api.service.UserService;
 import com.docbox.api.util.JwtUtil;
+
+import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +20,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/users")
@@ -76,5 +81,13 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Server Error");
         }
+    }
+    
+    @PutMapping("/uploadProfilePhoto")
+    public ResponseEntity<User> uploadImage(@RequestParam("userName") String userName,
+            @RequestParam("file") MultipartFile profilePhoto) throws IOException {
+    	userService.updateProfilePhoto(userName, profilePhoto);
+    	User user = userService.findByUsername(userName);
+        return ResponseEntity.ok(user);
     }
 }

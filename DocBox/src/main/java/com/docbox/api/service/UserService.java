@@ -2,8 +2,14 @@ package com.docbox.api.service;
 
 import com.docbox.api.customexception.ResourceNotFoundException;
 import com.docbox.api.dto.UserDTO;
+import com.docbox.api.entity.Document;
+import com.docbox.api.entity.DocumentImage;
 import com.docbox.api.entity.User;
 import com.docbox.api.repository.UserRepository;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -14,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -25,12 +32,12 @@ public class UserService implements UserDetailsService {
 
     public UserDTO saveUser(User user) {
     	UserDTO userDTO = new UserDTO(user); 
+    	user.setPassword(passwordEncoder.encode(user.getPassword()));
     	if(findByUsername(user.getUsername())==null) {    		
     		user = userRepository.save(user);
     		userDTO = new UserDTO(user);
     		userDTO.setStatus(false);
     	}
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userDTO;
     }
 
@@ -60,4 +67,14 @@ public class UserService implements UserDetailsService {
         // Save updated user
         return userRepository.save(existingUser);
     }
+    
+    @Transactional
+	public void updateProfilePhoto(String userName, MultipartFile profilePhoto) throws IOException {
+		
+    	User user = userRepository.findByUsername(userName);
+    	user.setProfilePhoto(profilePhoto.getBytes());
+    	userRepository.updateProfilePhoto(userName, profilePhoto.getBytes());
+    	
+//		return userRepository.updateProfilePhoto(userName, profilePhoto);
+	}
 }

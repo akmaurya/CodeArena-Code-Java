@@ -29,4 +29,5 @@ public class DocumentImageService {
     public void deleteDocumentImage(Long id) {
         documentImageRepository.deleteById(id);
     }
+
 }
